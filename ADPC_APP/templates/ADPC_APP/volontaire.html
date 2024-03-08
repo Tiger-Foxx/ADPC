@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+        <!-- subheader -->
+        <section id="subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>VOLONTAIRE DU PARTI</h1>
+                        <ul class="subdetail">
+                            <li><a href="index.html">ACCEUIL</a></li>
+                            <li class="sep">/</li>
+                            <li>VOLONTAIRE DU PARTI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader end -->
+        
+        
+       <!-- section contact -->
+    <section class="contactbg no-top no-bottom" id="contactus">
+
+      <!-- map -->
+      <div class="jumbotron no-top no-bottom">
+        <div class="onStep" data-animation="fadeInUp" data-time="300" style="display: flex;align-items:center;justify-content:center;"  ><div class="contenu" style="font-size:210px;color:green;background-color:rgba(216, 212, 212, 0)"><i class='bx bxs-group bx-burst' ></i> <h3>Oeuvrez Pour l'allience PATRIOTIQUE et DEMOCRATIQUE du CAMEROUN</h3></div></div>
+      </div>
+      <!-- map end -->
+
+      <div class="container">
+        <div class="row">
+
+          
+
+          <!-- address -->
+          <div class="col-md-4 col-xs-12">
+            <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
+              <h5>REMPLISSEZ LE FORMULAIRE POUR ADHERER AU PARTI</h5>
+
+              <address>
+                <span><strong>CES INFORMATIONS SONT OBLIGATOIRES</strong></span> <span><strong>Phone :</strong> (+237)
+                  000 00 00 00</span> <span><strong>Fax :</strong> (+237) 000 00 00 00</span>
+                <span><strong>Email :</strong> <a href="mailto:companyname@gmail.com">companyname@gmail.com</a></span>
+                <span><strong>Web : </strong> <a href="#test">www.companyname.com</a></span>
+              </address>
+            </div>
+          </div>
+          <!-- address end -->
+
+          <!-- contact form -->
+          <div class="col-md-8 col-xs-12">
+            <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
+              <form action="#" class="row" id="form-contact" method="post" name="form-don">
+                <input id="name" name="name" placeholder="VOTRE NOM COMPLET" type="text">
+                <input id="email" name="email" placeholder="VOTRE EMAIL" type="text">
+                <input id="telephone" name="telephone" placeholder="VOTRE TELEPHONE" type="text">
+                <input id="proffession" name="proffession" placeholder="VOTRE PROFFESSION" type="text">
+                <input id="ville" name="ville" placeholder="VOTRE VILLE DE RESIDENCE" type="text">
+                <textarea cols="50" id="message-contact" name="message" placeholder="VOTRE MOTIVATION" rows="4"></textarea>
+                <div class="success" id="mail_success">Merci pour votre demande</div>
+                <div class="error" id="mail_failed"> Error, email not sent</div>
+                <button class="btn" id="send-contact" type="submit">FAIRE UNE DEMANDE D'ADHESION</button>
+              </form>
+            </div>
+          </div>
+          <!-- contact form end -->
+        </div>
+      </div>
+
+      <!-- space -->
+      <div class="space-single"></div>
+    </section>
+    <!-- section contact end -->
+    {% endblock %}

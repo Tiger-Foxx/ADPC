@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+        <!-- subheader -->
+        <section id="subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="text-transform: uppercase;">{{post.title}}</h1>
+                        <ul class="subdetail">
+                            <li><a href="{% url 'index' %}">ACCEUIL</a></li>
+                            <li class="sep">/</li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader end -->
+        
+        
+            <!-- section -->
+            <section id="content" aria-label="section-blogg">
+            <div class="container">
+            <div class="row">
+
+                  <!-- left content -->
+                  <div class="col-md-8">
+                  <div class="onStep" data-animation="fadeInUp" data-time="300">
+
+                    <!-- article -->
+                     <article>
+                        <div class="post-image">
+                           
+                           {% if post.image %}
+                              <div class="imageBlog"><img class="img-responsive" src="{{post.image.url}}" alt="blog-img" /></div>
+                           {% endif %}
+                              
+                           <div class="post-heading">
+                              <h3><a href="#" style="text-transform: uppercase;">{{post.title}}</a></h3>
+                           </div>
+                        </div>
+                        <p>
+                           {{post.contenu}}
+                        </p>
+                        <div class="bottom-article">
+                           <ul class="meta-post">
+                              <li><a href="#">Par {{post.blogPoster}} le {{post.date}}</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </article>
+                     <!-- article end -->
+
+                     <!-- comment blog -->
+                     <div id="blog-comment">
+                        <h5><span>Commentaires</span></h5>
+
+                        
+                        {% for com in commentaires %}
+                           <ul>
+                              <li>
+                                 <div class="avatar"><img alt="img" src="{% static 'img/avatar.jpg' %}">
+                                 </div>
+                                 <div class="comment-info">
+                                    <span class="c-name">{{com.name}}</span>
+                                    <span class="c-date">{{com.date}}</span>
+                                    <span class="c-reply"><a href="https://mailto:{{com.email}}">Repondre</a></span>
+                                 </div>
+                                 <div class="comment">{{com.message}}</div>
+                                 
+                              </li>
+                           </ul>
+                        {% endfor %}
+                           
+
+                        
+
+
+                        <div id="comment-form-wrapper">
+                           <h5>LAISSEZ UN COMMENTAIRE</h5>
+                           <form id="commentform" name="form1" method="post" action="#">
+                              <input type="text" name="name" id="namecom" placeholder="Name" />
+                              <input type="text" name="email" id="emailcom" placeholder="Email" />
+                              <textarea cols="10" rows="10" name="message" id="messagecom" placeholder="Comment"></textarea>
+                              <div id="mail_success" class="success"> Thanks for your comment</div>
+                              <div id="mail_failed" class="error">Error, comment failed</div>
+                              <button id="sendcomment" class="btn" type="submit">Comment</button>
+                           </form>
+                        </div>
+                     </div>
+                     <!-- comment blog end -->
+                    </div>
+                   </div>
+                   <!-- left content end -->  
+
+                  <!-- right content -->
+                  <div class="col-md-4">
+                     <aside class="onStep" data-animation="fadeInUp" data-time="600">
+                        <!-- widget -->
+                        <div class="widget">
+                           <h5>Recent posts</h5>
+                           <div class="space-single devider-widget"></div>
+                           <div class="recent">
+                              
+                              {% for post in recentposts %}
+                                 <div>
+                                    
+                                    {% if post.image %}
+                                       <img class="imageBlog65" src="{{post.image.url}}" class="pull-left" alt="#" />
+                                    {% endif %}
+                                       
+                                    <h6><a href="{% url 'post' post.id %}" style="text-transform: uppercase;">{{post.title}}</a></h6>
+                                    <p>{{ post.date }}</p>
+                                 </div>
+                              {% endfor %}
+                                 
+                             
+                           </div>
+                        </div>
+                        <!-- widget end -->
+
+                        <!-- widget -->
+                        <div class="widget">
+                           <h5>Tags</h5>
+                           <div class="space-single devider-widget"></div>
+                           <div class="tags">
+                              
+                              {% for tag in tags %}
+                                 <div><a href="{% url 'blogTag' tag %}">{{tag}}</a>
+                                 </div>
+                              {% endfor %}
+                                 
+                              
+                           </div>
+                        </div>
+                        <!-- widget end -->
+
+                        <!-- widget -->
+                        <div class="widget">
+                           <h5>QUI SOMMES-NOUS ?</h5>
+                           <div class="space-single devider-widget"></div>
+                           <p>Proin hendrerit eget tellus sit amet vestibulum. Nullam a tincidunt leo. Sed eget sem scelerisque, malesuada lectus sed, facilisis sapien. Pellentesque quis ullamcorper est, vitae condimentum enim. Phasellus suscipit eu lacus finibus rhoncus. Maecenas sed lacus aliquam, vehicula sapien ac, cursus erat. Aenean vel erat a urna efficitur varius.</p>
+                        </div>
+                        <!-- widget end -->
+
+                     </aside>
+                  </div>
+                  <!-- right content end -->
+               </div>
+             </div>
+            </section>
+            <!-- section end -->
+            {% endblock %}

@@ -1,0 +1,547 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+    <!-- home -->
+    <!-- background slider -->
+    <div class="bgslider">
+      <div id="owl-slider-home" class="owl-carousel">
+
+        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-1.jpg' %})">
+          <!-- intro -->
+          <div class="overlay-main v-align text-center">
+            <div class="col-md-10 col-xs-11">
+
+              <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
+                  class="color">ADPC</span> NOTRE PARTI</h1>
+              <span class="devider-center onStep" data-animation="fadeInUp" data-time="400"></span>
+              <div class="onStep" data-animation="fadeInUp" data-time="600" id="slidertext">
+                <h3 style="font-weight:900;">ALLIANCE PATRIOTIQUE ET DEMOCRATIQUE DU CAMEROUN</h3>
+              </div>
+
+            </div>
+          </div>
+          <!-- intro end -->
+        </div>
+
+        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-2.jpg' %})">
+          <!-- intro -->
+          <div class="overlay-main v-align text-center">
+            <div class="col-md-10 col-xs-11">
+
+              <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
+                  class="color">PLUS ENCORE</span> UNE GRANDE FAMILLE</h1>
+              <span class="devider-center onStep" data-animation="fadeInUp" data-time="400"></span>
+              <div class="onStep" data-animation="fadeInUp" data-time="600" id="slidertext">
+                <h3 style="font-weight:900;">AU SERVICE DE L'ETAT, UN PARTI PROCHE DU POUVOIR</h3>
+              </div>
+
+            </div>
+          </div>
+          <!-- intro end -->
+        </div>
+
+        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-3.jpg' %})">
+          <!-- intro -->
+          <div class="overlay-main v-align text-center">
+            <div class="col-md-10 col-xs-11">
+
+              <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
+                  class="color">NOUS SOMMES L'ADPC</span> COMMENCER ICI</h1>
+              <span class="devider-center onStep" data-animation="fadeInUp" data-time="400"></span>
+              <div class="onStep" data-animation="fadeInUp" data-time="600" id="slidertext">
+                <h3 style="font-weight:900;">POUR EXPLORER NOTRE PARTI</h3>
+              </div>
+
+              <div class="btn-home onStep scroll-link" data-animation="fadeInUp" data-id="about" data-time="800">
+                <a class="link-class" href="#" style="font-weight:900;">COMMENCER</a>
+              </div>
+
+            </div>
+          </div>
+          <!-- intro end -->
+        </div>
+
+      </div>
+    </div>
+    <!-- background slider end -->
+    <!-- home end -->
+
+    <!-- section about -->
+    <section class="whitepage" id="about">
+
+      <!-- text -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center onStep" data-animation="fadeInUp" data-time="0" style="font-weight:900;">
+              QUI SOMMES-NOUS ? <span class="devider-black"></span>
+            </h2>
+            <div class="space-single"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="text-center onStep" data-animation="fadeInUp" data-time="300">
+              <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
+                minima veniam Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+                quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+                nesciunt. Neque porro quisquam est
+              </p>
+            </div>
+
+            <div class="space-double">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text end -->
+
+      <!-- service-about -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="service-about">
+              <div class="service-about onStep" data-animation="fadeInLeft" data-time="0">
+                <a class="detail-page" href="popup-page/about-1.html">
+                  <div class="hovereffect">
+                    <div class="img325x220"><img alt="imageportofolio" class="img-responsive" src="{% static 'img/solidarite.jpg' %}">
+                    </div>
+                    <div class="overlay"></div>
+                    <h2><span class="color">SOLIDARITE</span>|SOLIDARITY</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div class="service-about onStep" data-animation="fadeInUp" data-time="300" style="margin-bottom: 30px;">
+                <a class="detail-page" href="popup-page/about-2.html">
+                  <div class="hovereffect">
+                    <img alt="imageportofolio" class="img-responsive" src="{% static 'img/egalite.png' %}">
+                    <div class="overlay"></div>
+                    <h2><span class="color">EGALITE</span>|EQUALITY</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div class="service-about onStep" data-animation="fadeInRight" data-time="600">
+                <a class="detail-page" href="popup-page/about-3.html">
+                  <div class="hovereffect">
+                    <img alt="imageportofolio" class="img-responsive" src="{% static 'img/patrie.jpg' %}">
+                    <div class="overlay"></div>
+                    <h2><span class="color">PATRIE</span>|FATHERLAND</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- service-about end -->
+
+    </section>
+    <!-- section about end -->
+
+
+
+    <!-- section about -->
+    <section class="whitepage" id="about">
+
+      <!-- text -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center onStep" data-animation="fadeInUp" data-time="0" style="font-weight:900;">
+              ACTUALITES <span class="devider-black"></span>
+            </h2>
+            <div class="space-single"></div>
+          </div>
+        </div>
+      </div>
+      <!-- text end -->
+
+      <!-- service-about -->
+      <div class="container-fluid" id="container-actu">
+        <div class="wrapper">
+          <i id="left" class="bx bx-chevron-left" style="z-index: 2;"></i>
+          <ul class="carousel">
+
+
+            
+            {% for post in posts %}
+              <li class="card">
+                <div class="carte">
+                  
+                  {% if post.image %}
+                    <div class="carte-header"><a href="#"><img src="{{post.image.url}}" alt=""></a></div>
+                  {% else %}
+                  <div class="carte-header"><a href="#"><img src="{% static 'img/favicon.png' %}" alt=""></a></div>
+                  {% endif %}
+                    
+                  <div class="carte-body">
+                    <ul style="text-align: center;"><li class="bx bx-user" >By {{post.blogPoster}}</li><li style="color: red;" class="bx bx-calendar" style="font-weight: 700;"> le {{post.date}}</li></ul>
+                      <a href="{% url 'post' post.id %}">
+                          <h2 class="titreCarte">{{post.title}}</h2></a>
+                          <p>{{ post.contenu|slice:":250" }} ...</p></div>
+              </div>
+              </li>
+            {% endfor %}
+
+          </ul>
+          <i id="right" class="bx bx-chevron-right"></i>
+        </div>
+    
+      </div>
+      <!-- service-about end -->
+
+    </section>
+    <!-- section about end -->
+
+
+
+
+    <!-- service -->
+    <section class="servicebg" id="service-sec">
+
+      <!-- filter service -->
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="onStep" data-animation="fadeInUp" data-time="300">
+            <div class="filter-wraper text-center">
+              <ul class="animfadeInUpBig" data-time="1200" id="filters">
+                <li class="filt-serv selected" data-filter=".fierte">Un parti fier</li>
+                <li class="filt-serv" data-filter=".proche">Proche du pouvoir</li>
+                <li class="filt-serv" data-filter=".meilleur">oeuvrant pour le meilleur</li>
+                <li class="filt-serv" data-filter=".solidaire">Une famille solidaire</li>
+              </ul>
+            </div>
+            <div class="space-half"></div>
+          </div>
+
+        </div>
+      </div>
+      <!-- filter service end -->
+
+      <!-- service gallery -->
+      <div class="container">
+        <div class="row">
+          <div class="onStep" data-animation="fadeInUp" data-time="600" id="services">
+            <div class="col-md-12 col-xs-12">
+              <div class="service fierte text-center">
+                <h4>Un parti fier</h4>
+
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+              <div class="service proche text-center">
+                <h4> Proche du pouvoir</h4>
+
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+              <div class="service meilleur text-center">
+                <h4>Oeuvrant pour le meilleur</h4>
+
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+              <div class="service solidaire text-center">
+                <h4>Une famille solidaire</h4>
+
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="space-double"></div>
+      </div>
+      <!-- service gallery end -->
+
+      <!-- brands-->
+      <div class="onStep" data-animation="fadeInUp" data-time="900">
+        <div class="container">
+          <div class="row">
+
+            <div class="owl-carousel" id="owl-brand">
+
+             
+             {% for part in partenaires %}
+               <div class="item">
+                 <a href="{{part.lien}}"><img alt="background" height="71" src="{{part.photo.url}}" title="{{part.nom}}"></a>
+               </div>
+             {% endfor %}
+              
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- brands end-->
+
+    </section>
+    <!-- service end -->
+
+    <!-- section projects -->
+    <section class="whitepage no-bottom no-top" id="projects">
+      <!-- text -->
+      <div class="container" style="margin-top: 20px;">
+        <div class="row">
+
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center onStep" data-animation="fadeInUp" data-time="0" style="font-weight:900;">
+              L'ADPC DANS LE MONDE <span class="devider-black"></span>
+            </h2>
+            <div class="space-single"></div>
+          </div>
+        </div>
+      </div>
+      <!-- text end -->
+      <!-- filter project -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="onStep" data-animation="fadeInUp" data-time="300">
+            <div class="filter-wraper text-center">
+              <ul id="filter-porto">
+                <li class="filt-projects actived" data-project="*">NOUS SOMMES PRESENTS
+                </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- filter project end -->
+
+      <!-- start gallery -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
+            
+
+            
+            {% for souv in souvenirs %}
+              <div class="projects arc coor">
+                <div class="hovereffect big-img">
+                  <a href="{{souv.photo.url}}"><img alt="imageportofolio" class="img-responsive"
+                      src="{{souv.photo.url}}">
+                    <div class="overlay">
+                      <a href="{{souv.lien}}"><h3>{{ souv.description|slice:":26" }} ...</h3></a>
+                      <h3>{{ souv.date }}</h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+              
+
+            
+
+            
+
+          </div>
+        </div>
+      </div>
+      <!-- gallery end -->
+      <div class="space-double">
+      </div>
+    </section>
+    <!-- section projects end -->
+
+    <!-- yellow -->
+    <section class="yellow-page v-align">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <a class="popup-form" href="#">
+              <h4 class="text-center onStep" data-animation="fadeInUp" data-time="600">LE MOT DU PRESIDENT</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class=""  >
+      <div class="container" >
+
+        <div class="containere">
+          <div class="img-cont"><img src="{{mot.photo.url}}" alt="Un homme en costume foncé parlant dans des microphones" class="image"></div>
+          <div class="text">
+              <div><h1 class="titre">{{mot.titre}}</h1>
+                  <p class="stitre">{{mot.sous_titre}}</p>
+                  <p>{{mot.contenu}}</p>
+                  <p class="sign" style="font-family: Fasthand, cursive;">{{mot.signature}}</p></div>
+          </div>
+      </div>
+      </div>
+    </section>
+      
+    
+    
+    <!-- yellow end -->
+    
+    <!-- team -->
+    <section class="whitepage" id="team">
+      <div class="container" id="team-cnt">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center onStep" data-animation="fadeInUp" data-time="0">SOUTENEZ L'ADPC DE VOTRE MANIERE<span
+                class="devider-black"></span></h2>
+            <div class="space-single">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3">
+            <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="200">
+              <div class="contenu"><i class='bx bxs-group bx-burst' ></i></div>
+              <div class="team-des">
+                <h3>NOUS REJOINDRE</h3>
+                <span>DEVENEZ UN MEMBRE DU PARTI</span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="400">
+              <div class="contenu" style="background-color: rgb(232, 99, 121);"><i class='bx bxs-donate-heart bx-burst' ></i></div>
+              <div class="team-des">
+                <h3>DONATION</h3>
+                <span>SOUTENEZ NOTRE CAUSE</span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="600">
+              <div class="contenu" style="background-color: rgb(231, 174, 3);"><i class='bx bxs-hand bx-burst' ></i></div>
+              <div class="team-des">
+                <h3> VOTER</h3>
+                <span>VOTEZ POUR L'ADPC</span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="800">
+              <div class="contenu" style="background-color: rgb(16, 204, 204);"><i class='bx bxs-heart-square bx-burst'></i></div>
+              
+              <div class="team-des">
+                <h3>VOLONTARIAT</h3>
+                <span>DEVENEZ VOLONTAIRE </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- team end -->
+
+    <!-- section contact -->
+    <section class="contactbg no-top no-bottom" id="contactus">
+
+      <!-- map -->
+      <div class="jumbotron no-top no-bottom">
+        <div class="onStep" data-animation="fadeInUp" data-time="300" id="map"></div>
+      </div>
+      <!-- map end -->
+
+      <div class="container">
+        <div class="row">
+
+          <!-- contact form -->
+          <div class="col-md-8 col-xs-12">
+            <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
+              <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+                <input id="name-contact" name="name" placeholder="VOTRE NOM" type="text">
+                <input id="email-contact" name="email" placeholder="VOTRE EMAIL" type="text">
+                <textarea cols="50" id="message-contact" name="message" placeholder="VOTRE MESSAGE" rows="4"></textarea>
+                <div class="success" id="mail_success">Thank you. Your message has been sent</div>
+                <div class="error" id="mail_failed"> Error, email not sent</div>
+                <button class="btn" id="send-contact" type="submit">Sent Now</button>
+              </form>
+            </div>
+          </div>
+          <!-- contact form end -->
+
+          <!-- address -->
+          <div class="col-md-4 col-xs-12">
+            <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="900">
+              <h5>Contact Info</h5>
+
+              <address>
+                <span><strong>{{infos.lieu}}</strong></span> <span><strong>Phone :</strong>{{infos.tel}}</span> <span><strong>Fax :</strong> {{infos.fax}}</span>
+                <span><strong>Email :</strong> <a href="mailto:{{infos.email}}">{{infos.email}}</a></span>
+                <span><strong>Web :</strong> <a href="#test">{{infos.web}}</a></span>
+              </address>
+            </div>
+          </div>
+          <!-- address end -->
+        </div>
+      </div>
+
+      <!-- space -->
+      <div class="space-single"></div>
+    </section>
+    <!-- section contact end -->
+    {% endblock %}
+
+

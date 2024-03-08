@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- subheader -->
+<section id="subheader">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            {% if tag %}
+            <h1>POUR : {{tag}}</h1>
+            {% else %}
+            <h1>ACTUALITE</h1>
+            {% endif %}
+            <ul class="subdetail">
+               <li><a href="{% url 'index' %}">ACCEUIL</a></li>
+               <li class="sep">/</li>
+
+               {% if tag %}
+               <li>POUR : {{tag}}</li>
+               {% else %}
+               <li>ACTUALITE</li>
+               {% endif %}
+
+            </ul>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- subheader end -->
+
+
+<!-- section -->
+<section id="content" aria-label="section-blogg">
+   <div class="container">
+      <div class="row">
+
+         <!-- left content -->
+         <div class="col-md-8">
+            <div class="onStep" data-animation="fadeInUp" data-time="300">
+
+
+               {% for post in posts %}
+               <!-- article -->
+               <article>
+                  <div class="post-image">
+
+                     {% if post.image %}
+                     <div class="imageBlog"><img class="img-responsive" src="{{post.image.url}}" alt="blog-img" /></div>
+                        <div class="post-heading">
+
+                     {% endif %}
+                     <h3><a href="#" style="text-transform: uppercase;">{{post.title}}</a></h3>
+                  </div>
+
+            </div>
+            <p>
+               {{ post.contenu|slice:":370" }} ...
+
+            </p>
+            <div class="bottom-article">
+               <ul class="meta-post">
+                  <li><a href="#">Par {{post.blogPoster}} le {{post.date}}</a>
+                  </li>
+               </ul>
+               <a href="{% url 'post' post.id %}" class="btn pull-right">VOIR PLUS</a>
+            </div>
+            </article>
+            <!-- article end -->
+            {% endfor %}
+
+
+
+         </div>
+      </div>
+      <!-- left content end -->
+
+      <!-- right content -->
+      <div class="col-md-4">
+         <aside class="onStep" data-animation="fadeInUp" data-time="600">
+            <!-- widget -->
+            <div class="widget">
+               <h5>Recent posts</h5>
+               <div class="space-single devider-widget"></div>
+               <div class="recent">
+                  {% for post in recentposts %}
+                  <div>
+
+                     {% if post.image %}
+                     <img class="imageBlog65" src="{{post.image.url}}" class="pull-left" alt="#" />
+                     {% endif %}
+
+                     <h6><a href="{% url 'post' post.id %}" style="text-transform: uppercase;">{{post.title}}</a></h6>
+                     <p>{{ post.date }}</p>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+            <!-- widget end -->
+
+            <!-- widget -->
+            <div class="widget">
+               <h5>Tags</h5>
+               <div class="space-single devider-widget"></div>
+               <div class="tags">
+                  {% for tag in tags %}
+                  <div><a href="{% url 'blogTag' tag %}">{{tag}}</a>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+            <!-- widget end -->
+
+            <!-- widget -->
+            <div class="widget">
+               <h5>QUI SOMMES-NOUS</h5>
+               <div class="space-single devider-widget"></div>
+               <p>Proin hendrerit eget tellus sit amet vestibulum. Nullam a tincidunt leo. Sed eget sem scelerisque,
+                  malesuada lectus sed, facilisis sapien. Pellentesque quis ullamcorper est, vitae condimentum enim.
+                  Phasellus suscipit eu lacus finibus rhoncus. Maecenas sed lacus aliquam, vehicula sapien ac, cursus
+                  erat. Aenean vel erat a urna efficitur varius.</p>
+            </div>
+            <!-- widget end -->
+
+         </aside>
+      </div>
+      <!-- right content end -->
+   </div>
+   </div>
+</section>
+<!-- section end -->
+{% endblock %}
