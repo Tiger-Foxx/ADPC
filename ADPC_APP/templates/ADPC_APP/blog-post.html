@@ -51,6 +51,17 @@
                               <li><a href="#">Par {{post.blogPoster}} le {{post.date}}</a>
                               </li>
                            </ul>
+                           
+                           {% if post.joinPiece %}
+                           <a href="{{post.joinPiece.url}}" class="btn pull-right">TELECHARGER LA PIECE JOINTE</a>
+                           {% endif %}
+
+                           
+                           {% if post.joinLink %}
+                           <a href="{{post.joinlink}}" style="font-weight: 900;color:red">Lien joint a la publication ----></a>
+                           {% endif %}
+                              
+                              
                         </div>
                      </article>
                      <!-- article end -->

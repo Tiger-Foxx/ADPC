@@ -85,17 +85,7 @@
           <div class="col-md-12">
             <div class="text-center onStep" data-animation="fadeInUp" data-time="300">
               <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-                dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-                tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-                minima veniam Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem. Ut enim ad minima veniam Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                nesciunt. Neque porro quisquam est
+                {{infos.qui_sommes_nous}}
               </p>
             </div>
 
@@ -448,7 +438,7 @@
 
           <div class="col-md-3">
             <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="200">
-              <div class="contenu"><i class='bx bxs-group bx-burst' ></i></div>
+              <a href="{% url 'adhesion' %}"><div class="contenu"><i class='bx bxs-group bx-burst' ></i></div></a>
               <div class="team-des">
                 <h3>NOUS REJOINDRE</h3>
                 <span>DEVENEZ UN MEMBRE DU PARTI</span>
@@ -459,7 +449,7 @@
 
           <div class="col-md-3">
             <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="400">
-              <div class="contenu" style="background-color: rgb(232, 99, 121);"><i class='bx bxs-donate-heart bx-burst' ></i></div>
+              <a href="{% url 'don' %}"><div class="contenu" style="background-color: rgb(232, 99, 121);"><i class='bx bxs-donate-heart bx-burst' ></i></div></a>
               <div class="team-des">
                 <h3>DONATION</h3>
                 <span>SOUTENEZ NOTRE CAUSE</span>
@@ -470,7 +460,7 @@
 
           <div class="col-md-3">
             <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="600">
-              <div class="contenu" style="background-color: rgb(231, 174, 3);"><i class='bx bxs-hand bx-burst' ></i></div>
+              <a href="{% url 'postTag' '#voteradpc' %}"><div class="contenu" style="background-color: rgb(231, 174, 3);"><i class='bx bxs-hand bx-burst' ></i></div></a>
               <div class="team-des">
                 <h3> VOTER</h3>
                 <span>VOTEZ POUR L'ADPC</span>
@@ -481,7 +471,7 @@
 
           <div class="col-md-3">
             <div class="team-wrapper onStep" data-animation="fadeInUp" data-time="800">
-              <div class="contenu" style="background-color: rgb(16, 204, 204);"><i class='bx bxs-heart-square bx-burst'></i></div>
+              <a href="{% url 'Volontariat' %}"><div class="contenu" style="background-color: rgb(16, 204, 204);"><i class='bx bxs-heart-square bx-burst'></i></div></a>
               
               <div class="team-des">
                 <h3>VOLONTARIAT</h3>
@@ -543,5 +533,4 @@
     </section>
     <!-- section contact end -->
     {% endblock %}
-
 

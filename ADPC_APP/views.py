@@ -6,8 +6,8 @@ from ADPC_APP.models import Commentaire, Informations, Mot_president, Partenaire
 
 
 def index(request):
-    infos=get_object_or_404(Informations,id=0)
-    mot=get_object_or_404(Mot_president,id=0)
+    infos=get_object_or_404(Informations,id=1)
+    mot=get_object_or_404(Mot_president,id=1)
     posts=Post.objects.all().order_by('-date')
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
@@ -17,7 +17,7 @@ def index(request):
     return render(request,'ADPC_APP/index.html',context={"posts":posts,"documents":documents,"documentsParti":documentsParti,"souvenirs":souvenirs,"partenaires":partenaires,"mot":mot,"infos":infos})
 
 def don(request):
-    infos=get_object_or_404(Informations,id=0)
+    infos=get_object_or_404(Informations,id=1)
     form = DonForm()
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
@@ -32,7 +32,7 @@ def don(request):
         return render(request,'ADPC_APP/don.html',context={"form":form,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 def adhesion(request):
-    infos=get_object_or_404(Informations,id=0)
+    infos=get_object_or_404(Informations,id=1)
     form = AdhesionForm()
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
@@ -49,7 +49,7 @@ def adhesion(request):
         
 
 def volontariat(request):
-    infos=get_object_or_404(Informations,id=0)
+    infos=get_object_or_404(Informations,id=1)
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     form = VolontariatForm()
@@ -74,39 +74,43 @@ def comment(request):
             return render(request, 'ADPC_APP/fail.html')
 
 def blog(request):
+    infos=get_object_or_404(Informations,id=1)
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     tags=Tag.objects.all()
     posts=Post.objects.all().order_by('-date')
     recentPosts=posts[:3]
-    return render(request,'ADPC_APP/blog.html',context={"posts":posts,"recentposts":recentPosts,"tags":tags,"documents":documents,"documentsParti":documentsParti})
+    return render(request,'ADPC_APP/blog.html',context={"posts":posts,"recentposts":recentPosts,"tags":tags,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 
 def blogTag(request,tag):
+    infos=get_object_or_404(Informations,id=1)
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     tags=Tag.objects.all()
     post=Post.objects.filter(Tag__contains=tag).order_by('-date')
     recentPost=Post.objects.order_by('-date')[:3]
-    return render(request,'ADPC_APP/blog.html',context={"posts":post,"recentposts":recentPost,"tag":tag,"tags":tags,"documents":documents,"documentsParti":documentsParti})
+    return render(request,'ADPC_APP/blog.html',context={"posts":post,"recentposts":recentPost,"tag":tag,"tags":tags,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 
 def post_detail(request,id):
+    infos=get_object_or_404(Informations,id=1)
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     post=get_object_or_404(Post,id=id)
     tags=post.Tag.split("#")[1:]
     recentPost=Post.objects.order_by('-date')[:3]
     commentaires=Commentaire.objects.filter(post=post).order_by('-date')
-    return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"commentaires":commentaires,"documents":documents,"documentsParti":documentsParti})
+    return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"commentaires":commentaires,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 def post_Tag(request,tag):
+    infos=get_object_or_404(Informations,id=1)
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     post=get_object_or_404(Post,Tag=tag)
     tags=post.Tag.split("#")[1:]
     recentPost=Post.objects.order_by('-date')[:3]
-    return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"documents":documents,"documentsParti":documentsParti})
+    return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 
 
