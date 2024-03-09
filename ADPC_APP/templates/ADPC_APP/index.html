@@ -500,17 +500,37 @@
           <!-- contact form -->
           <div class="col-md-8 col-xs-12">
             <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
-              <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+              <form action="#" class="row" id="form-contact"  name="form-contact">
                 <input id="name-contact" name="name" placeholder="VOTRE NOM" type="text">
                 <input id="email-contact" name="email" placeholder="VOTRE EMAIL" type="text">
                 <textarea cols="50" id="message-contact" name="message" placeholder="VOTRE MESSAGE" rows="4"></textarea>
-                <div class="success" id="mail_success">Thank you. Your message has been sent</div>
-                <div class="error" id="mail_failed"> Error, email not sent</div>
-                <button class="btn" id="send-contact" type="submit">Sent Now</button>
+                
+                <button class="btn" id="send-contac" type="submit">Sent Now</button>
               </form>
             </div>
           </div>
+          <a href="http://mailto:FOX@gmail.com?" style="display: none;" id="mail">lien</a>
           <!-- contact form end -->
+
+          <script>
+            
+            document.getElementById('form-contact').addEventListener('submit', function(event) {
+              event.preventDefault(); // Empêche l'envoi du formulaire
+            
+              // Récupère les valeurs des champs du formulaire
+              var nom = document.getElementById('name-contact').value;
+              var email = document.getElementById('email-contact').value;
+              var message = document.getElementById('message-contact').value;
+            
+              // Crée le lien wa.me:
+              var whatsapp_link = 'https://wa.me/+237658866639?text=' + encodeURIComponent('BONJOUR JE M\'APELLE ' + nom + '\n MON EMAIL DE REPONSE EST ' + email + '\n\n ET JE VOUS ECRIS POUR : ' + message);
+            
+              // Ouvre le lien wa.me dans un nouvel onglet
+              window.open(whatsapp_link, '_blank');
+            });
+            
+              
+          </script>
 
           <!-- address -->
           <div class="col-md-4 col-xs-12">

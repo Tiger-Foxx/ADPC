@@ -54,18 +54,35 @@
           <!-- contact form -->
           <div class="col-md-8 col-xs-12">
             <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
-              <form action="#" class="row" id="form-contact" method="post" name="form-don">
-                <input id="name" name="name" placeholder="VOTRE NOM COMPLET" type="text">
-                <input id="email" name="email" placeholder="VOTRE EMAIL" type="text">
-                <input id="telephone" name="telephone" placeholder="VOTRE TELEPHONE" type="text">
-                <input id="proffession" name="proffession" placeholder="VOTRE PROFFESSION" type="text">
-                <input id="ville" name="ville" placeholder="VOTRE VILLE DE RESIDENCE" type="text">
-                <textarea cols="50" id="message-contact" name="message" placeholder="VOTRE MOTIVATION" rows="4"></textarea>
+              <form action="{% url 'adhesion' %}" class="row" id="form-contact" method="post" name="form-adhesion">
+                {% csrf_token %}
+                <!-- Champ 'Nom_Adherateur' correspondant au modèle Django -->
+                <input id="name" name="Nom_Adherateur" placeholder="VOTRE NOM COMPLET" type="text" required>
+            
+                <!-- Champ 'email' correspondant au modèle Django -->
+                <input id="email" name="email" placeholder="VOTRE EMAIL" type="text" required>
+            
+                <!-- Champ 'telephone' correspondant au modèle Django -->
+                <input id="telephone" name="telephone" placeholder="VOTRE TELEPHONE" type="text" required>
+            
+                <!-- Champ 'proffession' n'est pas présent dans le modèle Django, donc il a été retiré -->
+            
+                <!-- Champ 'ville' correspondant au modèle Django -->
+                <input id="ville" name="ville" placeholder="VOTRE VILLE DE RESIDENCE" type="text" required>
+                <!-- Champ 'ville' correspondant au modèle Django -->
+                <input id="proffession" name="Proffession" placeholder="VOTRE PROFFESSION" type="text" required>
+            
+                <!-- Champ 'motivation' correspondant au modèle Django -->
+                <textarea cols="50" id="message-contact" name="motivation" placeholder="VOTRE MOTIVATION" rows="4" required></textarea>
+            
                 <div class="success" id="mail_success">Merci pour votre demande</div>
-                <div class="error" id="mail_failed"> Error, email not sent</div>
-                <button class="btn" id="send-contact" type="submit">FAIRE UNE DEMANDE D'ADHESION</button>
+                <div class="error" id="mail_failed">Erreur, email non envoyé</div>
+            
+                <!-- Bouton pour soumettre le formulaire -->
+                <button class="btn" id="send-contac" type="submit">FAIRE UNE DEMANDE D'ADHESION</button>
               </form>
             </div>
+            
           </div>
           <!-- contact form end -->
         </div>

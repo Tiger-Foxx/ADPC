@@ -51,12 +51,18 @@ class Tag(models.Model):
         return f"Tag : {self.name}"  
 
 class Don(models.Model):
-    NomDonneur=models.CharField(max_length=250,null=True,blank=True) 
+    NomDonneur=models.CharField(max_length=250,default="Un Inconnu", blank=True,auto_created=True) 
     email=models.EmailField(max_length=250,null=True,blank=True)
-    telephone=models.CharField(max_length=13,null=True,blank=True)
-    motivation=models.TextField(null=True, blank=True) 
+    telephone=models.CharField(max_length=13,default="Inconnu", blank=True,auto_created=True)
+    motivation=models.TextField( blank=True,default="Inconnue",auto_created=True) 
     date=models.DateField(editable=False,default=datetime.datetime.now(),auto_created=True)
-    montant=models.FloatField()    
+    montant=models.FloatField()   
+    def __str__(self):
+        if self.NomDonneur:
+           
+            return f"Don  de {self.montant} XAF Par {self.NomDonneur} le {self.date.strftime("%d/%m/%Y")}"
+        else:
+            return f"Don  de {self.montant} XAF Par Un Inconnu le {self.date.strftime("%d/%m/%Y")}"    
  
  
 class Volontariat(models.Model):
@@ -70,12 +76,16 @@ class Volontariat(models.Model):
     
     
 class Adhesion(models.Model):
+    Proffession=models.CharField(max_length=250,default='Aucune') 
     Nom_Adherateur=models.CharField(max_length=250) 
     email=models.EmailField(max_length=250)
     telephone=models.CharField(max_length=13,null=True,blank=True)
     motivation=models.TextField(null=True) 
     date=models.DateField(editable=False,default=datetime.datetime.now(),auto_created=True)
-    ville=models.CharField(max_length=250)   
+    ville=models.CharField(max_length=250)  
+    def __str__(self):
+        return f"Demande d'adhesion de {self.Nom_Adherateur}, numero : {self.telephone} ville : {self.ville} le {self.date}"
+    
     
 
 class Souvenir(models.Model):

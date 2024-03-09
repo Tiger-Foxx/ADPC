@@ -17,7 +17,7 @@ class DonForm(forms.ModelForm):
 class AdhesionForm(forms.ModelForm):
     class Meta:
         model = Adhesion
-        fields = ['Nom_Adherateur','telephone','email', 'motivation','ville']
+        fields = ['Nom_Adherateur','telephone','email', 'motivation','ville','Proffession']
 
 class VolontariatForm(forms.ModelForm):
     class Meta:

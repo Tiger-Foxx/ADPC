@@ -27,6 +27,7 @@ def don(request):
             form.save()
             return render(request, 'ADPC_APP/success.html')
         else :
+            print(form.errors)
             return render(request, 'ADPC_APP/fail.html')
     else:
         return render(request,'ADPC_APP/don.html',context={"form":form,"documents":documents,"documentsParti":documentsParti,"infos":infos})
@@ -94,13 +95,28 @@ def blogTag(request,tag):
 
 
 def post_detail(request,id):
-    infos=get_object_or_404(Informations,id=1)
-    documents=Post.objects.filter(Tag__contains="document")
-    documentsParti=Post.objects.filter(Tag__contains="leparti")
-    post=get_object_or_404(Post,id=id)
-    tags=post.Tag.split("#")[1:]
-    recentPost=Post.objects.order_by('-date')[:3]
-    commentaires=Commentaire.objects.filter(post=post).order_by('-date')
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            infos=get_object_or_404(Informations,id=1)
+            documents=Post.objects.filter(Tag__contains="document")
+            documentsParti=Post.objects.filter(Tag__contains="leparti")
+            post=get_object_or_404(Post,id=id)
+            tags=post.Tag.split("#")[1:]
+            recentPost=Post.objects.order_by('-date')[:3]
+            commentaires=Commentaire.objects.filter(post=post).order_by('-date')
+            return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"commentaires":commentaires,"documents":documents,"documentsParti":documentsParti,"infos":infos})
+        else :
+            return render(request, 'ADPC_APP/fail.html')
+    else:
+        infos=get_object_or_404(Informations,id=1)
+        documents=Post.objects.filter(Tag__contains="document")
+        documentsParti=Post.objects.filter(Tag__contains="leparti")
+        post=get_object_or_404(Post,id=id)
+        tags=post.Tag.split("#")[1:]
+        recentPost=Post.objects.order_by('-date')[:3]
+        commentaires=Commentaire.objects.filter(post=post).order_by('-date')
     return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"commentaires":commentaires,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 def post_Tag(request,tag):

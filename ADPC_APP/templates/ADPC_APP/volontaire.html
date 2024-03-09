@@ -54,16 +54,16 @@
           <!-- contact form -->
           <div class="col-md-8 col-xs-12">
             <div class="onStep" data-animation="fadeInLeft" data-time="600" id="contact">
-              <form action="#" class="row" id="form-contact" method="post" name="form-don">
-                <input id="name" name="name" placeholder="VOTRE NOM COMPLET" type="text">
-                <input id="email" name="email" placeholder="VOTRE EMAIL" type="text">
-                <input id="telephone" name="telephone" placeholder="VOTRE TELEPHONE" type="text">
-                <input id="proffession" name="proffession" placeholder="VOTRE PROFFESSION" type="text">
-                <input id="ville" name="ville" placeholder="VOTRE VILLE DE RESIDENCE" type="text">
-                <textarea cols="50" id="message-contact" name="message" placeholder="VOTRE MOTIVATION" rows="4"></textarea>
+              <form action="{% url 'Volontariat' %}" class="row" id="form-contact" method="post" name="form-don">
+                <input id="name" name="Nom_Volontaire" placeholder="VOTRE NOM COMPLET" type="text" required>
+                <input id="email" name="email" placeholder="VOTRE EMAIL" type="text" required>
+                <input id="telephone" name="telephone" placeholder="VOTRE TELEPHONE" type="text" required>
+                <input id="proffession" name="activite" placeholder="VOTRE PROFFESSION" type="text" required>
+                <input id="ville" name="ville" placeholder="VOTRE VILLE DE RESIDENCE" type="text" required>
+                <textarea cols="50" id="message-contact" name="motivation" placeholder="VOTRE MOTIVATION" rows="4" required></textarea>
                 <div class="success" id="mail_success">Merci pour votre demande</div>
                 <div class="error" id="mail_failed"> Error, email not sent</div>
-                <button class="btn" id="send-contact" type="submit">FAIRE UNE DEMANDE D'ADHESION</button>
+                <button class="btn" id="send-contac" type="submit">ENVOYER VOTRE CANDIDATURE</button>
               </form>
             </div>
           </div>
