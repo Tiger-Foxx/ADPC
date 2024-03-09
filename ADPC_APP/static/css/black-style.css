@@ -387,7 +387,7 @@ padding:0;
           -webkit-align-items: center;
               -ms-flex-align: center;
                   align-items: center;
-          background:rgba(0,0,0,1);
+          background:#02a049;
     }
 .mainpreloader {
 	position:relative;
@@ -397,7 +397,7 @@ padding:0;
 
 .mainpreloader img{ display:block; margin:0 auto; z-index:999;}
 .mainpreloader span{ display:block; font-size:8pt; text-transform:uppercase; letter-spacing:2px; text-align:center; margin:10px auto;}
-.bg-preloader{ position:fixed; width:100%; height:100%; top:0px; left:0px; background:#000; z-index:999;}
+.bg-preloader{ position:fixed; width:100%; height:100%; top:0px; left:0px; background:#02a049; z-index:999;}
 
 .logo-preloader{
 	-webkit-animation: fadeimg 1s infinite linear;

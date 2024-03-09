@@ -88,7 +88,48 @@
       </div>
 
     </div>
+    <script>
 
+      function checkout() {
+        formulaire=document.getElementById("form-contact");
+        montant=document.getElementById("montant-don").value;
+        
+        CinetPay.setConfig({
+            apikey: '134418579865e4a196c1f8b6.60425865',//   YOUR APIKEY
+            site_id: '5869356',//YOUR_SITE_ID
+            notify_url: 'http://mondomaine.com/notify/',
+            mode: 'PRODUCTION'
+        });
+        CinetPay.getCheckout({
+            transaction_id: Math.floor(Math.random() * 100000000).toString(), // YOUR TRANSACTION ID
+            amount: parseInt(montant),
+            currency: 'XAF',
+            channels: 'ALL',
+            description: 'DON A L\'ALLIANCE PATRIOTIQUE ET DEMOCRATIQUE DU CAMEROUN',   
+             
+
+        });
+        CinetPay.waitResponse(function(data) {
+            if (data.status == "REFUSED") {
+              alert("VOTRE DON N'A PAS ETE EFFECTUE")
+            } else if (data.status == "ACCEPTED") {
+              formulaire.submit();
+               
+            }
+        });
+        CinetPay.onError(function(data) {
+            console.log(data);
+        });
+    }
+
+
+      document.getElementById('form-contact').addEventListener('submit', function(event) {
+        event.preventDefault();
+        checkout()
+      });
+
+      
+    </script>
     <!-- space -->
     <div class="space-single"></div>
 </section>
