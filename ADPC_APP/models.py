@@ -42,7 +42,7 @@ class Commentaire(models.Model):
     message = models.TextField()
     date=models.DateField(editable=False,default=datetime.datetime.now(),auto_created=True)
     def __str__(self):
-        return f"commentaire  de {self.name} sur {self.post.title} le {self.date.strftime("%d/%m/%Y")}"   
+        return f"commentaire  de {self.name} sur {self.post.title} le {self.date.strftime('%d/%m/%Y')}"   
     
 class Tag(models.Model):
     slug = models.SlugField()
