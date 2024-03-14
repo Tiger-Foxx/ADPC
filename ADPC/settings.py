@@ -23,7 +23,7 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
-print(ALLOWED_HOSTS)
+#print(ALLOWED_HOSTS)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -134,3 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL="/media/"
 MEDIA_ROOT= BASE_DIR / "media"
+
