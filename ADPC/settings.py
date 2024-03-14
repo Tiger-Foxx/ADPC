@@ -11,21 +11,29 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env=environ.Env()
+environ.Env.read_env(env_file=str(BASE_DIR / 'ADPC' / '.env'))
+SECRET_KEY = env("SECRET_KEY")
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env.bool("DEBUG")
 
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+
+print(ALLOWED_HOSTS)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ri2n*3-r&2s6p+paof&33d8(7-0rojbold#u!jy9++ed$kt7hf'
+#SECRET_KEY = 'django-insecure-ri2n*3-r&2s6p+paof&33d8(7-0rojbold#u!jy9++ed$kt7hf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
