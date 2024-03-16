@@ -8,7 +8,7 @@ from ADPC_APP.models import Commentaire, Informations, Mot_president, Partenaire
 def index(request):
     infos=get_object_or_404(Informations,id=1)
     mot=get_object_or_404(Mot_president,id=1)
-    posts=Post.objects.all().order_by('-date')[:10]
+    posts=Post.objects.all().order_by('-date')[:7]
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     souvenirs=Souvenir.objects.all()
