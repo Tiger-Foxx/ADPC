@@ -60,7 +60,7 @@ class Don(models.Model):
     def __str__(self):
         if self.NomDonneur:
            
-            return f"Don  de {self.montant} XAF Par {self.NomDonneur} le {self.date.strftime("%d/%m/%Y")}"
+            return f"Don  de {self.montant} XAF Par {self.NomDonneur} le {self.date.strftime('%d/%m/%Y')}"
         else:
             return f"Don  de {self.montant} XAF Par Un Inconnu le {self.date.strftime('%d/%m/%Y')}"    
  
