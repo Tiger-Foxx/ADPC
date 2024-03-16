@@ -5,12 +5,12 @@
 {% load static %}
     <!-- home -->
     <!-- background slider -->
-    <div class="bgslider">
-      <div id="owl-slider-home" class="owl-carousel">
+    <div class="bgslider" >
+      <div id="owl-slider-home" class="owl-carousel" >
 
-        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-1.jpg' %})">
+        <div class="item imgbg" style="background-image:url({% static 'img/banner/ban1.jpg' %})" >
           <!-- intro -->
-          <div class="overlay-main v-align text-center">
+          <div class="overlay-main v-align text-center couverture" >
             <div class="col-md-10 col-xs-11">
 
               <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
@@ -25,9 +25,9 @@
           <!-- intro end -->
         </div>
 
-        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-2.jpg' %})">
+        <div class="item imgbg" style="background-image:url({% static 'img/banner/ban2.jpg' %})">
           <!-- intro -->
-          <div class="overlay-main v-align text-center">
+          <div class="overlay-main v-align text-center couverture">
             <div class="col-md-10 col-xs-11">
 
               <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
@@ -42,9 +42,9 @@
           <!-- intro end -->
         </div>
 
-        <div class="item imgbg" style="background-image:url({% static 'img/img-slide-3.jpg' %})">
+        <div class="item imgbg" style="background-image:url({% static 'img/banner/ban3.jpg' %})">
           <!-- intro -->
-          <div class="overlay-main v-align text-center">
+          <div class="overlay-main v-align text-center couverture">
             <div class="col-md-10 col-xs-11">
 
               <h1 class="onStep" data-animation="fadeInUp" data-time="300" style="font-weight:900;"><span
@@ -172,9 +172,9 @@
                 <div class="carte">
                   
                   {% if post.image %}
-                    <div class="carte-header"><a href="#"><img src="{{post.image.url}}" alt=""></a></div>
+                  <a href="{% url 'post' post.id %}"><div class="carte-header"><img src="{{post.image.url}}" alt=""></div></a>
                   {% else %}
-                  <div class="carte-header"><a href="#"><img src="{% static 'img/favicon.png' %}" alt=""></a></div>
+                  <a href="{% url 'post' post.id %}"></a><div class="carte-header"><img src="{% static 'img/favicon.png' %}" alt=""></div></a>
                   {% endif %}
                     
                   <div class="carte-body">
@@ -200,126 +200,130 @@
 
 
     <!-- service -->
-    <section class="servicebg" id="service-sec">
+    <section class="servicebg" id="service-sec" >
 
-      <!-- filter service -->
-      <div class="container-fluid">
-        <div class="row">
-
-          <div class="onStep" data-animation="fadeInUp" data-time="300">
-            <div class="filter-wraper text-center">
-              <ul class="animfadeInUpBig" data-time="1200" id="filters">
-                <li class="filt-serv selected" data-filter=".fierte">Un parti fier</li>
-                <li class="filt-serv" data-filter=".proche">Proche du pouvoir</li>
-                <li class="filt-serv" data-filter=".meilleur">oeuvrant pour le meilleur</li>
-                <li class="filt-serv" data-filter=".solidaire">Une famille solidaire</li>
-              </ul>
-            </div>
-            <div class="space-half"></div>
-          </div>
-
-        </div>
-      </div>
-      <!-- filter service end -->
-
-      <!-- service gallery -->
-      <div class="container">
-        <div class="row">
-          <div class="onStep" data-animation="fadeInUp" data-time="600" id="services">
-            <div class="col-md-12 col-xs-12">
-              <div class="service fierte text-center">
-                <h4>Un parti fier</h4>
-
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
-                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
-                </p>
+    
+    <div style="background-color: rgba(0, 0, 0, 0.382);">
+        <!-- filter service -->
+        <div class="container-fluid" >
+          <div class="row">
+  
+            <div class="onStep" data-animation="fadeInUp" data-time="300">
+              <div class="filter-wraper text-center">
+                <ul class="animfadeInUpBig" data-time="1200" id="filters">
+                  <li class="filt-serv selected" data-filter=".fierte">Un parti fier</li>
+                  <li class="filt-serv" data-filter=".proche">Proche du pouvoir</li>
+                  <li class="filt-serv" data-filter=".meilleur">oeuvrant pour le meilleur</li>
+                  <li class="filt-serv" data-filter=".solidaire">Une famille solidaire</li>
+                </ul>
               </div>
+              <div class="space-half"></div>
             </div>
-
-            <div class="col-md-12 col-xs-12">
-              <div class="service proche text-center">
-                <h4> Proche du pouvoir</h4>
-
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
-                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-12 col-xs-12">
-              <div class="service meilleur text-center">
-                <h4>Oeuvrant pour le meilleur</h4>
-
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
-                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-12 col-xs-12">
-              <div class="service solidaire text-center">
-                <h4>Une famille solidaire</h4>
-
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
-                  et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
-                </p>
-              </div>
-            </div>
-
-
+  
           </div>
         </div>
-
-        <div class="space-double"></div>
-      </div>
-      <!-- service gallery end -->
-
-      <!-- brands-->
-      <div class="onStep" data-animation="fadeInUp" data-time="900">
+        <!-- filter service end -->
+  
+        <!-- service gallery -->
         <div class="container">
           <div class="row">
-
-            <div class="owl-carousel" id="owl-brand">
-
-             
-             {% for part in partenaires %}
-               <div class="item">
-                 <a href="{{part.lien}}"><img alt="background" height="71" src="{{part.photo.url}}" title="{{part.nom}}"></a>
-               </div>
-             {% endfor %}
-              
-
+            <div class="onStep" data-animation="fadeInUp" data-time="600" id="services">
+              <div class="col-md-12 col-xs-12">
+                <div class="service fierte text-center">
+                  <h4>Un parti fier</h4>
+  
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                    aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                    et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="col-md-12 col-xs-12">
+                <div class="service proche text-center">
+                  <h4> Proche du pouvoir</h4>
+  
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                    aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                    et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="col-md-12 col-xs-12">
+                <div class="service meilleur text-center">
+                  <h4>Oeuvrant pour le meilleur</h4>
+  
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                    aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                    et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="col-md-12 col-xs-12">
+                <div class="service solidaire text-center">
+                  <h4>Une famille solidaire</h4>
+  
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                    aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                    et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  </p>
+                </div>
+              </div>
+  
+  
             </div>
-
+          </div>
+  
+          <div class="space-double"></div>
+        </div>
+        <!-- service gallery end -->
+  
+        <!-- brands-->
+        <div class="onStep" data-animation="fadeInUp" data-time="900">
+          <div class="container">
+            <div class="row">
+  
+              <div class="owl-carousel" id="owl-brand">
+  
+               
+               {% for part in partenaires %}
+                 <div class="item">
+                   <a href="{{part.lien}}"><img alt="background" height="71" src="{{part.photo.url}}" title="{{part.nom}}"></a>
+                 </div>
+               {% endfor %}
+                
+  
+              </div>
+  
+            </div>
           </div>
         </div>
-      </div>
-      <!-- brands end-->
-
+        <!-- brands end-->
+  
+   
+  </div>
     </section>
     <!-- service end -->
 
@@ -363,11 +367,11 @@
             
             {% for souv in souvenirs %}
               <div class="projects arc coor">
-                <div class="hovereffect big-img">
+                <div class="hovereffect big-im">
                   <a href="{{souv.photo.url}}"><img alt="imageportofolio" class="img-responsive"
                       src="{{souv.photo.url}}">
                     <div class="overlay">
-                      <a href="{{souv.lien}}"><h3>{{ souv.description|slice:":26" }} ...</h3></a>
+                      <a href="{{souv.lien}}"><h3>{{ souv.descripion|slice:":26" }} ...</h3></a>
                       <h3>{{ souv.date }}</h3>
                     </div>
                   </a>

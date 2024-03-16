@@ -17,7 +17,7 @@ Post
 
 """
 class Post(models.Model):
-    id=models.IntegerField(primary_key=True,auto_created=True)
+    id=models.IntegerField(primary_key=True,auto_created=True,editable=False)
     date=models.DateField(blank=True,null=True)
     Tag=models.CharField(max_length=500)
     title=models.CharField(max_length=128)
@@ -62,7 +62,7 @@ class Don(models.Model):
            
             return f"Don  de {self.montant} XAF Par {self.NomDonneur} le {self.date.strftime("%d/%m/%Y")}"
         else:
-            return f"Don  de {self.montant} XAF Par Un Inconnu le {self.date.strftime("%d/%m/%Y")}"    
+            return f"Don  de {self.montant} XAF Par Un Inconnu le {self.date.strftime('%d/%m/%Y')}"    
  
  
 class Volontariat(models.Model):

@@ -1,5 +1,9 @@
 /* CSS Document */
-
+.service h4{
+  font-weight: 900;
+  color: rgb(255, 208, 0);
+  
+}
 .containere {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -539,8 +543,9 @@ li > a:only-child:after { content: ''; }
 /* subheader */
 	#subheader{
 	padding-bottom:70px;
-	background:#222;
-	background:url(../img/bg-subheader.jpg)top fixed;
+	/*background:#222222;*/
+	background:url(../img/page2.jpg)top fixed gray;
+  
 	}
 	#subheader h1 {
 	color:#eceff3;
@@ -755,21 +760,25 @@ background-color: rgba(255,204,0,1);
 
 /* service */
 .servicebg {
+  font-weight: 700;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   overflow-x:hidden;
-  background:url(../img/bg-service.jpg) no-repeat center center fixed;
+  background:url(../img/page1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
 }
 
+
 .filter-wraper { position:relative; margin:0 auto;  }
 #filters li.filt-serv{
-    color: #fff;
+
+  font-weight: 900;
+    color: #ffffff;
     font-size:10pt;
     font-weight:300;
 	margin-right:5px;
@@ -1719,4 +1728,7 @@ background:rgba(0,0,0,0);
   max-height: 65px;
   overflow: hidden;
   object-fit: cover;
+}
+.couverture{
+  background-color: rgba(0, 0, 0, 0.33);
 }

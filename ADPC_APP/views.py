@@ -8,7 +8,7 @@ from ADPC_APP.models import Commentaire, Informations, Mot_president, Partenaire
 def index(request):
     infos=get_object_or_404(Informations,id=1)
     mot=get_object_or_404(Mot_president,id=1)
-    posts=Post.objects.all().order_by('-date')
+    posts=Post.objects.all().order_by('-date')[:10]
     documents=Post.objects.filter(Tag__contains="document")
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     souvenirs=Souvenir.objects.all()
@@ -90,7 +90,7 @@ def blogTag(request,tag):
     documentsParti=Post.objects.filter(Tag__contains="leparti")
     tags=Tag.objects.all()
     post=Post.objects.filter(Tag__contains=tag).order_by('-date')
-    recentPost=Post.objects.order_by('-date')[:3]
+    recentPost=Post.objects.order_by('-date')[:4]
     return render(request,'ADPC_APP/blog.html',context={"posts":post,"recentposts":recentPost,"tag":tag,"tags":tags,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 
@@ -120,7 +120,7 @@ def post_detail(request,id):
     return render(request,'ADPC_APP/blog-post.html',context={"post":post,"recentposts":recentPost,"tags":tags,"commentaires":commentaires,"documents":documents,"documentsParti":documentsParti,"infos":infos})
 
 def post_Tag(request,tag):
-    post=get_object_or_404(Post,Tag=tag)
+    post=get_object_or_404(Post,Tag=tag,id=1)
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():

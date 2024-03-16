@@ -89,7 +89,7 @@
                   <div>
 
                      {% if post.image %}
-                     <img class="imageBlog65" src="{{post.image.url}}" class="pull-left" alt="#" />
+                     <a href="{% url 'post' post.id %}"><img class="imageBlog65" src="{{post.image.url}}" class="pull-left" alt="#" /></a>
                      {% endif %}
 
                      <h6><a href="{% url 'post' post.id %}" style="text-transform: uppercase;">{{post.title}}</a></h6>
@@ -106,7 +106,7 @@
                <div class="space-single devider-widget"></div>
                <div class="tags">
                   {% for tag in tags %}
-                  <div><a href="{% url 'blogTag' tag %}">{{tag}}</a>
+                  <div><a href="{% url 'blogTag' tag.slug %}">{{tag.name}}</a>
                   </div>
                   {% endfor %}
                </div>
